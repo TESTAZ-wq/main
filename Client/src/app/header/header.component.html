@@ -1,0 +1,25 @@
+<div class="form-group row">
+    <div class="col-sm-4"></div>
+    <div class="col-sm-4">
+        <div class="row" style="background-color: rgb(120, 190, 252);">
+            <div class="col-sm-3">
+                <button class="btn btn6 btn-block" type="submit" routerLink="/" style="color: rgb(255, 255, 255); margin-top: 30px;"
+                    mat-button>
+                    voir liste</button>
+            </div>
+            <div class="col-sm-5"></div>
+            <div class="col-sm-4">
+                <button *ngIf="!utilisateur" class="btn btn6 btn-block" type="submit" routerLink="/login"
+                    style="color: rgb(54, 99, 224)" mat-button>Se
+                    connecter</button>
+                <h4 *ngIf="utilisateur" style="margin-left: 120px;color: blanchedalmond;">
+                    {{utilisateur}}
+                </h4>
+                <button *ngIf="utilisateur" class="btn btn6 btn-block" type="submit" (click)="deconnect()"
+                    style="color: rgb(13, 13, 14);margin-left: 40px" mat-button>Se
+                    deconnecter</button>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-4"></div>
+</div>

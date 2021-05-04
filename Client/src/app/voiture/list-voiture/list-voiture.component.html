@@ -1,0 +1,27 @@
+<app-header></app-header>
+<div class="row">
+    <div class="col-sm-4"></div>
+    <div class="col-sm-4">
+        <div class="card-body">
+            <table class="tab">
+                <thead>
+                    <tr>
+                        <th class="marque">Marque</th>
+                        <th class="model">Model</th>
+                        <th class="action">Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor=" let voiture of voitures">
+                        <td>{{voiture.marqueVoiture}}</td>
+                        <td>{{voiture.model}}</td>
+                        <td><button class="btn btn6 btn-block" type="submit" (click)="commentaire(voiture.id)">
+                                voir commentaire
+                            </button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="col-sm-4"></div>
+</div>

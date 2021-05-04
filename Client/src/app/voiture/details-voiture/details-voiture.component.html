@@ -1,0 +1,39 @@
+<app-header></app-header>
+<div class="row" *ngIf="voiture">
+    <div class="col-sm-4"></div>
+    <div class="col-sm-4">
+        <h1>{{voiture.model}}</h1>
+        <h5>{{voiture.marqueVoiture}}</h5>
+    </div>
+    <div class="col-sm-4"></div>
+</div>
+
+<div class="row">
+    <div class="col-sm-4"></div>
+    <div class="col-sm-4" style="margin-top: 1%;">
+        <textarea matInput [(ngModel)]="commentaire" style="height: 40px; width: 400px;"
+            autocomplete="off"></textarea>&nbsp;
+        <button class="btn btn6 mat-button" style="background-color: rgb(86, 158, 206);color: white;" type="submit"
+            (click)="commmenter()">
+            Commenter</button>
+
+    </div>
+    <div class="col-sm-4"></div>
+</div>
+<div class="row">
+    <div class="col-sm-4"></div>
+    <div class="col-sm-4">
+        <hr>
+        <table style="width: 100%;">
+            <thead>
+                <tr *ngFor=" let commentaire of commentaires" style="padding: 10px;">
+                    <hr>
+                    <td>{{commentaire.commentaire}}</td>
+                    <td style="float: right;">{{commentaire.dateCommentaire | date: 'dd/MM/yyyy'}}
+                    <p style="font-size: 15px;">par : {{commentaire.utilisateur}}</p></td>
+                </tr>
+            </thead>
+        </table>
+    </div>
+    <div class="col-sm-4"></div>
+</div>
